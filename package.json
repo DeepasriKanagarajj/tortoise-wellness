@@ -1,0 +1,9 @@
+{
+  "name": "tortoise-wellness",
+  "version": "1.0.0",
+  "description": "Mental wellness landing page",
+  "scripts": {
+    "build": "echo 'Building static site'"
+  },
+  "static": true
+}
