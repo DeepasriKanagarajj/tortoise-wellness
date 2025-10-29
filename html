@@ -5,297 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tortoise - Find Your Calm Pace</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #2c3e50;
-            background-color: #f8f9fa;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .logo {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        .tagline {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #e74c3c;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.3s ease;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-        }
-
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5rem;
-            color: #2c3e50;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            color: #3498db;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-
-        /* Contact Form */
-        .contact {
-            background: #34495e;
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            background: #e74c3c;
-            color: white;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background: #c0392b;
-        }
-
-        /* Footer */
-        footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .tagline {
-                font-size: 1.2rem;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #2c3e50; background: #f8f9fa; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 80px 0; text-align: center; }
+        .logo { font-size: 3rem; margin-bottom: 20px; }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .tagline { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
+        .cta-button { display: inline-block; background: #e74c3c; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; }
+        
+        .services { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .service-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        
+        .contact { background: #34495e; color: white; padding: 80px 0; text-align: center; }
+        .contact-form { max-width: 500px; margin: 0 auto; }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: none; border-radius: 8px; }
+        .submit-btn { background: #e74c3c; color: white; padding: 15px 40px; border: none; border-radius: 50px; cursor: pointer; }
+        
+        footer { background: #2c3e50; color: white; text-align: center; padding: 30px 0; }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
     <header>
         <div class="container">
             <div class="logo">🐢</div>
             <h1>Tortoise</h1>
             <p class="tagline">Your Journey, Your Pace</p>
-            <p style="margin-bottom: 30px; font-size: 1.2rem;">Steady support for mental wellness across life's challenges</p>
             <a href="#contact" class="cta-button">Join the Waiting List</a>
         </div>
     </header>
 
-    <!-- Services Section -->
     <section class="services">
         <div class="container">
             <h2 class="section-title">Our Sanctuaries</h2>
             <div class="services-grid">
-                <!-- Tortoise NEST -->
                 <div class="service-card">
-                    <div class="service-icon">👶</div>
-                    <h3>Tortoise NEST</h3>
+                    <h3>👶 Tortoise NEST</h3>
                     <p><strong>For New Moms</strong></p>
-                    <p>Find your rhythm in the beautiful chaos of new motherhood. 4-week workshops offering mindfulness, community, and practical support for the first year.</p>
+                    <p>Support for the beautiful chaos of new motherhood with workshops and community.</p>
                 </div>
-
-                <!-- Tortoise CONNECT -->
                 <div class="service-card">
-                    <div class="service-icon">💬</div>
-                    <h3>Tortoise CONNECT</h3>
+                    <h3>💬 Tortoise CONNECT</h3>
                     <p><strong>Social Anxiety Support</strong></p>
-                    <p>A safe space with structured, low-pressure social exercises. Build confidence at your own pace with peer support and practical self-coaching tools.</p>
+                    <p>Safe space with structured social exercises to build confidence at your own pace.</p>
                 </div>
-
-                <!-- Tortoise PACE -->
                 <div class="service-card">
-                    <div class="service-icon">💼</div>
-                    <h3>Tortoise PACE</h3>
+                    <h3>💼 Tortoise PACE</h3>
                     <p><strong>Burnout Recovery</strong></p>
-                    <p>Join "The Herd" - a community for professionals facing burnout. Weekly expert Q&As, resources, and a space to share and heal together.</p>
+                    <p>Community for professionals facing burnout with expert Q&As and peer support.</p>
                 </div>
-
-                <!-- Tortoise EDU -->
                 <div class="service-card">
-                    <div class="service-icon">🎓</div>
-                    <h3>Tortoise EDU</h3>
+                    <h3>🎓 Tortoise EDU</h3>
                     <p><strong>Student Support</strong></p>
-                    <p>4-week workshops for students managing academic pressure. Learn stress management, mindfulness, and build resilience skills.</p>
+                    <p>Workshops for students managing academic pressure and building resilience.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Get in Touch</h2>
-            <p style="margin-bottom: 40px; font-size: 1.2rem;">Join our waiting list or send us a message. We'll contact you when we launch!</p>
-            
             <form class="contact-form" id="waitingListForm">
                 <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
+                    <label>Full Name</label>
+                    <input type="text" name="name" required>
                 </div>
-
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
+                    <label>Email Address</label>
+                    <input type="email" name="email" required>
                 </div>
-
                 <div class="form-group">
-                    <label for="interest">I'm most interested in:</label>
-                    <select id="interest" name="interest" required>
+                    <label>I'm interested in:</label>
+                    <select name="interest" required>
                         <option value="">Select a program</option>
                         <option value="nest">Tortoise NEST (New Moms)</option>
                         <option value="connect">Tortoise CONNECT (Social Anxiety)</option>
                         <option value="pace">Tortoise PACE (Burnout Recovery)</option>
                         <option value="edu">Tortoise EDU (Student Support)</option>
-                        <option value="all">All Programs</option>
                     </select>
                 </div>
-
                 <div class="form-group">
-                    <label for="message">Your Message (Optional)</label>
-                    <textarea id="message" name="message" placeholder="Tell us a bit about what you're looking for..."></textarea>
+                    <label>Your Message (Optional)</label>
+                    <textarea name="message" placeholder="Tell us what you're looking for..."></textarea>
                 </div>
-
                 <button type="submit" class="submit-btn">Join Waiting List</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Tortoise Wellness. All rights reserved.</p>
+            <p>&copy; 2024 Tortoise Wellness</p>
             <p>Email: deepasr55000@gmail.com</p>
         </div>
     </footer>
 
     <script>
-        // Simple form handling - in a real site, you'd connect this to a backend
         document.getElementById('waitingListForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Get form data
-            const name = document.getElementById('name').value;
-            const interest = document.getElementById('interest').options[document.getElementById('interest').selectedIndex].text;
-            
-            // Show success message
-            alert(`Thank you ${name}! You've joined the waiting list for ${interest}. We'll be in touch soon!`);
-            
-            // Reset form
+            const name = this.name.value;
+            const interest = this.interest.options[this.interest.selectedIndex].text;
+            alert(`Thank you ${name}! You've joined the waiting list for ${interest}. We'll contact you soon!`);
             this.reset();
         });
     </script>
