@@ -16,6 +16,9 @@
             background: #0a0a0a;
             color: #fff;
             overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+            padding-bottom: 60px; /* Space for footer */
         }
 
         /* Animated Background */
@@ -213,11 +216,35 @@
             opacity: 0.7;
         }
 
+        /* Taipei Footer */
+        .taipei-footer {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.6;
+            z-index: 2;
+        }
+
+        .taipei-footer span {
+            color: #ff6b6b;
+            animation: heartbeat 2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .tagline { font-size: 1.1rem; }
             .hidden-benefits { grid-template-columns: 1fr; }
+            .taipei-footer { font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -271,6 +298,11 @@
         <div class="mystery-counter">
             <span id="waitlistCount">127</span> curious minds already waiting
         </div>
+    </div>
+
+    <!-- Taipei Footer -->
+    <div class="taipei-footer">
+        Made with <span>❤️</span> in Taipei
     </div>
 
     <script>
