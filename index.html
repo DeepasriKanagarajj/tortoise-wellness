@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tortoise | Find Your Pace</title>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G0VGMGX6XD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-G0VGMGX6XD');
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -18,10 +28,9 @@
             overflow-x: hidden;
             min-height: 100vh;
             position: relative;
-            padding-bottom: 60px; /* Space for footer */
+            padding-bottom: 60px;
         }
 
-        /* Animated Background */
         .animated-bg {
             position: fixed;
             top: 0;
@@ -40,7 +49,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Floating Elements */
         .floating-elements {
             position: fixed;
             top: 0;
@@ -63,7 +71,6 @@
             100% { transform: translateY(-1000px) rotate(360deg); }
         }
 
-        /* Main Content */
         .container {
             min-height: 100vh;
             display: flex;
@@ -146,7 +153,6 @@
             opacity: 0.8;
         }
 
-        /* Waitlist Form */
         .waitlist-form {
             max-width: 400px;
             width: 100%;
@@ -209,14 +215,12 @@
             margin-top: 20px;
         }
 
-        /* Mystery Counter */
         .mystery-counter {
             margin-top: 30px;
             font-size: 0.9rem;
             opacity: 0.7;
         }
 
-        /* Cebu Footer */
         .cebu-footer {
             position: absolute;
             bottom: 20px;
@@ -239,7 +243,6 @@
             100% { transform: scale(1); }
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .tagline { font-size: 1.1rem; }
@@ -249,13 +252,10 @@
     </style>
 </head>
 <body>
-    <!-- Animated Background -->
     <div class="animated-bg"></div>
     
-    <!-- Floating Elements -->
     <div class="floating-elements" id="floatingElements"></div>
 
-    <!-- Main Content -->
     <div class="container">
         <div class="logo">🐢</div>
         <h1>Find Your Pace</h1>
@@ -300,7 +300,6 @@
         </div>
     </div>
 
-    <!-- Cebu Footer -->
     <div class="cebu-footer">
         Made with <span>❤️</span> in Cebu
     </div>
@@ -332,7 +331,7 @@
             }, 5000);
         }
 
-        // Waitlist function
+        // Waitlist function with GA tracking
         function joinWaitlist() {
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
@@ -340,6 +339,14 @@
             if (!name || !email) {
                 alert('Please enter both your name and email');
                 return;
+            }
+
+            // Track conversion in Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'waitlist_signup', {
+                    'event_category': 'Conversion',
+                    'event_label': 'Waitlist Form'
+                });
             }
 
             // Simulate API call
@@ -359,6 +366,23 @@
                 counter.textContent = parseInt(counter.textContent) + 1;
             }, 2000);
         }
+
+        // Track page view
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view', {
+                page_title: 'Tortoise Landing Page',
+                page_location: window.location.href
+            });
+        }
+
+        // Simple visitor counter (backup)
+        let visitCount = localStorage.getItem('tortoiseVisits') || 0;
+        visitCount = parseInt(visitCount) + 1;
+        localStorage.setItem('tortoiseVisits', visitCount);
+        
+        console.log(`🐢 Tortoise Visitor #${visitCount}`);
+        console.log('🕒 Visit time:', new Date().toLocaleString());
+        console.log('🌐 Came from:', document.referrer || 'Direct visit');
 
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
